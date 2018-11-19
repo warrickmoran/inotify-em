@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+    <div id='map' style='width: 800px; height: 800px;'></div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1Ijoid2Fycmlja21vcmFuIiwiYSI6ImNqbHoxNzh0MTBydWkza254aHFqcXMxN3EifQ.XLeriUvAJmYp4RZifiKjyg';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v10',
+            zoom: 9 // starting zoom
+        });
+        
+        // Add zoom and rotation controls to the map.
+        map.addControl(new mapboxgl.NavigationControl());
+    </script>
+
+    <p th:text="'Hello, ' + ${name} + '!'" />
+</body>
+</html>
